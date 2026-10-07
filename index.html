@@ -1,0 +1,2917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Outback Property Care NT | Property Maintenance</title>
+
+  <meta
+    name="description"
+    content="Outback Property Care NT — professional property care and maintenance across the Northern Territory."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --sand: #e9dcc5;
+      --cream: #f7f3eb;
+
+      --dark: #151714;
+      --dark-2: #1e211d;
+      --charcoal: #292d27;
+
+      --clay: #a65d35;
+      --rust: #c87843;
+      --sage: #68715c;
+
+      --white: #ffffff;
+      --muted: #aeb2a9;
+
+      --line: rgba(255,255,255,0.11);
+
+      --shadow: 0 25px 70px rgba(0,0,0,0.18);
+
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--clay);
+      color: white;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 120px 0;
+    }
+
+    .section-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      color: var(--clay);
+      margin-bottom: 22px;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-dark .section-label {
+      color: var(--sand);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Manrope", sans-serif;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      min-height: 54px;
+      padding: 0 25px;
+
+      border-radius: 999px;
+
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--sand);
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      background: white;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: var(--charcoal);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.06);
+    }
+
+
+    /* =========================================================
+       DEMO NOTICE
+    ========================================================= */
+
+    .demo-bar {
+      background: var(--clay);
+      color: white;
+
+      text-align: center;
+
+      padding: 8px 18px;
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: absolute;
+      z-index: 20;
+      top: 36px;
+      left: 0;
+      width: 100%;
+
+      color: white;
+    }
+
+    .nav {
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 8px 0 20px;
+
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(15,17,14,0.58);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-radius: 999px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--sand);
+      color: var(--dark);
+
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-family: "Manrope", sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-sub {
+      margin-top: 5px;
+
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+
+      color: var(--sand);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+
+      margin-left: auto;
+      margin-right: 28px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      color: rgba(255,255,255,0.75);
+
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--sand);
+
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 52px;
+      padding: 0 21px;
+
+      border-radius: 999px;
+
+      background: var(--sand);
+      color: var(--dark);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      transition: transform 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 850px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 75% 25%,
+          rgba(166,93,53,0.23),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 20% 75%,
+          rgba(104,113,92,0.18),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #10120f 0%,
+          #181b17 55%,
+          #26251f 100%
+        );
+
+      color: white;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.25;
+
+      background-image:
+        linear-gradient(
+          135deg,
+          transparent 0%,
+          rgba(255,255,255,0.03) 50%,
+          transparent 100%
+        );
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+
+      opacity: 0.055;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.5) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.5) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+
+      mask-image: linear-gradient(
+        to right,
+        black,
+        transparent 80%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      width: min(760px, 100%);
+
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      margin-bottom: 28px;
+
+      color: var(--sand);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+
+    .eyebrow span {
+      width: 38px;
+      height: 1px;
+
+      background: var(--sand);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+
+      font-size: clamp(58px, 8vw, 105px);
+
+      font-weight: 800;
+
+      line-height: 0.95;
+
+      margin-bottom: 30px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--sand);
+    }
+
+    .hero-copy {
+      max-width: 590px;
+
+      color: rgba(255,255,255,0.7);
+
+      font-size: 17px;
+      line-height: 1.8;
+
+      margin-bottom: 38px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      margin-bottom: 75px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      max-width: 670px;
+
+      border-top: 1px solid rgba(255,255,255,0.14);
+
+      padding-top: 25px;
+    }
+
+    .stat {
+      padding-right: 25px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .stat:not(:first-child) {
+      padding-left: 25px;
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      display: block;
+
+      color: var(--sand);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+
+      margin-bottom: 5px;
+    }
+
+    .stat-text {
+      color: rgba(255,255,255,0.52);
+
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+
+    /* =========================================================
+       HERO DECORATIVE LANDSCAPE
+    ========================================================= */
+
+    .landscape {
+      position: absolute;
+
+      right: -3%;
+      bottom: -3px;
+
+      width: 56%;
+      height: 55%;
+
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    .sun {
+      position: absolute;
+
+      right: 20%;
+      top: 7%;
+
+      width: 150px;
+      height: 150px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(233,220,197,0.9) 0%,
+          rgba(233,220,197,0.25) 55%,
+          transparent 70%
+        );
+
+      filter: blur(2px);
+    }
+
+    .hill {
+      position: absolute;
+      bottom: 0;
+
+      border-radius: 50% 50% 0 0;
+    }
+
+    .hill-one {
+      right: -8%;
+
+      width: 90%;
+      height: 58%;
+
+      background: #22251f;
+
+      transform: rotate(-4deg);
+    }
+
+    .hill-two {
+      right: 18%;
+
+      width: 85%;
+      height: 45%;
+
+      background: #303328;
+
+      transform: rotate(5deg);
+    }
+
+    .hill-three {
+      right: 42%;
+
+      width: 70%;
+      height: 32%;
+
+      background: #3b3c30;
+
+      transform: rotate(-3deg);
+    }
+
+    .grass-line {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      width: 100%;
+      height: 28%;
+
+      background:
+        linear-gradient(
+          160deg,
+          transparent 40%,
+          rgba(104,113,92,0.7) 41%,
+          transparent 42%
+        );
+
+      background-size: 25px 25px;
+
+      opacity: 0.45;
+    }
+
+
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
+    .intro {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+
+      gap: 90px;
+
+      align-items: center;
+    }
+
+    .intro h2 {
+      max-width: 670px;
+
+      font-size: clamp(42px, 5vw, 67px);
+
+      margin-bottom: 28px;
+    }
+
+    .intro h2 span {
+      color: var(--clay);
+    }
+
+    .intro-copy {
+      max-width: 590px;
+
+      color: #65685f;
+
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .intro-copy + .intro-copy {
+      margin-top: 16px;
+    }
+
+    .visual-card {
+      position: relative;
+
+      min-height: 490px;
+
+      overflow: hidden;
+
+      border-radius: var(--radius-lg);
+
+      background:
+        radial-gradient(
+          circle at 70% 25%,
+          rgba(200,120,67,0.4),
+          transparent 28%
+        ),
+        linear-gradient(
+          145deg,
+          #292d27,
+          #161815
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .visual-card::before {
+      content: "OUTBACK";
+
+      position: absolute;
+
+      left: -40px;
+      bottom: 85px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 95px;
+      font-weight: 800;
+
+      letter-spacing: -0.08em;
+
+      color: rgba(255,255,255,0.045);
+
+      transform: rotate(-90deg);
+
+      transform-origin: left bottom;
+    }
+
+    .visual-orb {
+      position: absolute;
+
+      width: 250px;
+      height: 250px;
+
+      right: -70px;
+      top: -70px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(233,220,197,0.22);
+    }
+
+    .visual-orb::after {
+      content: "";
+
+      position: absolute;
+      inset: 25px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(233,220,197,0.12);
+    }
+
+    .visual-lines {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          120deg,
+          transparent 49.5%,
+          rgba(255,255,255,0.08) 50%,
+          transparent 50.5%
+        );
+
+      background-size: 80px 80px;
+
+      opacity: 0.35;
+    }
+
+    .visual-bottom {
+      position: absolute;
+
+      left: 35px;
+      right: 35px;
+      bottom: 35px;
+
+      padding: 28px;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      border-radius: 18px;
+
+      background: rgba(0,0,0,0.22);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .visual-bottom small {
+      display: block;
+
+      color: var(--sand);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+
+      margin-bottom: 10px;
+    }
+
+    .visual-bottom h3 {
+      color: white;
+
+      font-size: 27px;
+    }
+
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      background: #ece6da;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      gap: 40px;
+
+      margin-bottom: 55px;
+    }
+
+    .services-header h2 {
+      max-width: 620px;
+
+      font-size: clamp(42px, 5vw, 65px);
+    }
+
+    .services-header p {
+      max-width: 350px;
+
+      color: #686b63;
+
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+    }
+
+    .service-card {
+      position: relative;
+
+      min-height: 300px;
+
+      padding: 30px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(21,23,20,0.1);
+
+      border-radius: var(--radius-md);
+
+      background: rgba(255,255,255,0.48);
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+
+      background: white;
+
+      box-shadow: 0 20px 50px rgba(21,23,20,0.09);
+    }
+
+    .service-number {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 11px;
+      font-weight: 800;
+
+      color: var(--clay);
+
+      letter-spacing: 0.14em;
+    }
+
+    .service-icon {
+      position: absolute;
+
+      right: 25px;
+      top: 25px;
+
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid rgba(21,23,20,0.1);
+
+      border-radius: 50%;
+
+      color: var(--clay);
+
+      font-size: 17px;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--dark);
+      color: white;
+    }
+
+    .service-card h3 {
+      max-width: 240px;
+
+      margin-top: 70px;
+      margin-bottom: 14px;
+
+      font-size: 25px;
+    }
+
+    .service-card p {
+      color: #72756c;
+
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .service-arrow {
+      position: absolute;
+
+      bottom: 25px;
+      right: 28px;
+
+      color: var(--clay);
+
+      font-size: 20px;
+
+      transition: transform 0.25s ease;
+    }
+
+    .service-card:hover .service-arrow {
+      transform: translateX(5px);
+    }
+
+
+    /* =========================================================
+       WHY US
+    ========================================================= */
+
+    .why-layout {
+      display: grid;
+
+      grid-template-columns: 0.85fr 1fr;
+
+      gap: 100px;
+
+      align-items: center;
+    }
+
+    .why-visual {
+      position: relative;
+
+      min-height: 570px;
+
+      overflow: hidden;
+
+      border-radius: var(--radius-lg);
+
+      background:
+        linear-gradient(
+          145deg,
+          #31352d,
+          #171916
+        );
+    }
+
+    .why-visual::before {
+      content: "";
+
+      position: absolute;
+
+      width: 370px;
+      height: 370px;
+
+      left: -110px;
+      top: -100px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(233,220,197,0.2);
+
+      box-shadow:
+        0 0 0 40px rgba(233,220,197,0.025),
+        0 0 0 80px rgba(233,220,197,0.02);
+    }
+
+    .why-visual::after {
+      content: "NT";
+
+      position: absolute;
+
+      right: -15px;
+      bottom: -50px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 250px;
+      font-weight: 800;
+
+      line-height: 1;
+
+      color: rgba(255,255,255,0.035);
+    }
+
+    .coordinate {
+      position: absolute;
+
+      left: 30px;
+      bottom: 30px;
+
+      color: rgba(255,255,255,0.35);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .why-content h2 {
+      max-width: 650px;
+
+      font-size: clamp(42px, 5vw, 65px);
+
+      margin-bottom: 24px;
+    }
+
+    .why-content > p {
+      max-width: 590px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.9;
+
+      margin-bottom: 38px;
+    }
+
+    .benefits {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 26px 35px;
+    }
+
+    .benefit {
+      display: flex;
+
+      gap: 15px;
+    }
+
+    .benefit-icon {
+      flex: 0 0 auto;
+
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: rgba(233,220,197,0.08);
+
+      color: var(--sand);
+
+      font-size: 13px;
+    }
+
+    .benefit h4 {
+      color: white;
+
+      font-size: 15px;
+
+      margin-bottom: 5px;
+    }
+
+    .benefit p {
+      color: #858a80;
+
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       QUOTE STRIP
+    ========================================================= */
+
+    .quote-strip {
+      background: var(--sand);
+
+      padding: 80px 0;
+    }
+
+    .quote-inner {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 50px;
+    }
+
+    .quote-inner h2 {
+      max-width: 720px;
+
+      font-size: clamp(38px, 5vw, 62px);
+    }
+
+    .quote-inner h2 span {
+      color: var(--clay);
+    }
+
+
+    /* =========================================================
+       PROCESS
+    ========================================================= */
+
+    .process {
+      background: var(--cream);
+    }
+
+    .process-header {
+      text-align: center;
+
+      max-width: 720px;
+
+      margin: 0 auto 70px;
+    }
+
+    .process-header .section-label {
+      justify-content: center;
+    }
+
+    .process-header h2 {
+      font-size: clamp(42px, 5vw, 64px);
+
+      margin-bottom: 20px;
+    }
+
+    .process-header p {
+      color: #70736b;
+
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .process-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 0;
+    }
+
+    .process-step {
+      position: relative;
+
+      padding: 0 28px 0 0;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: "";
+
+      position: absolute;
+
+      top: 25px;
+      right: 25px;
+
+      width: calc(100% - 75px);
+      height: 1px;
+
+      background: rgba(21,23,20,0.12);
+
+      transform: translateX(50%);
+    }
+
+    .process-number {
+      position: relative;
+      z-index: 2;
+
+      width: 50px;
+      height: 50px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: var(--dark);
+      color: var(--sand);
+
+      font-family: "Manrope", sans-serif;
+
+      font-size: 12px;
+      font-weight: 800;
+
+      margin-bottom: 28px;
+    }
+
+    .process-step h3 {
+      font-size: 21px;
+
+      margin-bottom: 12px;
+    }
+
+    .process-step p {
+      color: #74776f;
+
+      font-size: 13px;
+      line-height: 1.8;
+
+      max-width: 220px;
+    }
+
+
+    /* =========================================================
+       CTA / CONTACT
+    ========================================================= */
+
+    .contact {
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(166,93,53,0.27),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #171916,
+          #252820
+        );
+
+      color: white;
+    }
+
+    .contact::before {
+      content: "";
+
+      position: absolute;
+
+      width: 550px;
+      height: 550px;
+
+      right: -180px;
+      bottom: -300px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(233,220,197,0.12);
+    }
+
+    .contact-inner {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns: 1fr 0.55fr;
+
+      gap: 100px;
+
+      align-items: center;
+    }
+
+    .contact h2 {
+      max-width: 720px;
+
+      font-size: clamp(45px, 6vw, 78px);
+
+      margin-bottom: 24px;
+    }
+
+    .contact h2 span {
+      color: var(--sand);
+    }
+
+    .contact-copy {
+      max-width: 580px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.9;
+
+      margin-bottom: 35px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+
+      gap: 15px;
+
+      padding: 16px 18px;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      border-radius: 14px;
+
+      background: rgba(255,255,255,0.025);
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateX(5px);
+
+      background: rgba(255,255,255,0.05);
+
+      border-color: rgba(233,220,197,0.25);
+    }
+
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+
+      flex: 0 0 auto;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: rgba(233,220,197,0.08);
+
+      color: var(--sand);
+
+      font-size: 15px;
+    }
+
+    .contact-item small {
+      display: block;
+
+      color: #777c72;
+
+      font-size: 9px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+
+      margin-bottom: 3px;
+    }
+
+    .contact-item strong {
+      color: white;
+
+      font-size: 13px;
+    }
+
+    .contact-note {
+      margin-top: 18px;
+
+      color: #6f746a;
+
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: #0e100d;
+
+      color: white;
+
+      padding: 65px 0 28px;
+    }
+
+    .footer-top {
+      display: grid;
+
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+      gap: 50px;
+
+      padding-bottom: 55px;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand p {
+      max-width: 310px;
+
+      color: #72776e;
+
+      font-size: 12px;
+      line-height: 1.8;
+
+      margin-top: 20px;
+    }
+
+    .footer-column h4 {
+      color: var(--sand);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      color: #858a81;
+
+      font-size: 12px;
+
+      margin-bottom: 10px;
+
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 25px;
+
+      color: #5e635b;
+
+      font-size: 10px;
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .intro-layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .visual-card {
+        min-height: 430px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-layout {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+      .why-visual {
+        min-height: 430px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+
+    @media (max-width: 850px) {
+
+      .container {
+        width: min(100% - 34px, 700px);
+      }
+
+      .section {
+        padding: 85px 0;
+      }
+
+      header {
+        top: 34px;
+      }
+
+      .nav {
+        padding-left: 13px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        min-height: 47px;
+      }
+
+      .hero {
+        min-height: 790px;
+      }
+
+      .hero-content {
+        padding-top: 90px;
+      }
+
+      .hero h1 {
+        font-size: clamp(53px, 13vw, 82px);
+      }
+
+      .landscape {
+        width: 90%;
+        opacity: 0.6;
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 50px 30px;
+      }
+
+      .process-step:not(:last-child)::after {
+        display: none;
+      }
+
+      .quote-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+
+    @media (max-width: 580px) {
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .demo-bar {
+        font-size: 9px;
+        padding: 8px 12px;
+      }
+
+      header {
+        top: 35px;
+      }
+
+      .brand-text {
+        display: none;
+      }
+
+      .nav {
+        height: 65px;
+      }
+
+      .brand-mark {
+        width: 39px;
+        height: 39px;
+      }
+
+      .nav-cta {
+        min-height: 44px;
+        padding: 0 17px;
+
+        font-size: 11px;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+      }
+
+      .hero-copy {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+
+        margin-bottom: 55px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+      }
+
+      .stat,
+      .stat:not(:first-child) {
+        padding: 0 0 15px;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .stat:last-child {
+        border-bottom: none;
+      }
+
+      .landscape {
+        width: 120%;
+        right: -25%;
+
+        bottom: 0;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .intro h2,
+      .services-header h2,
+      .why-content h2 {
+        font-size: 42px;
+      }
+
+      .visual-card {
+        min-height: 370px;
+      }
+
+      .visual-bottom {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+
+        padding: 22px;
+      }
+
+      .visual-bottom h3 {
+        font-size: 23px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 270px;
+      }
+
+      .why-visual {
+        min-height: 350px;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-strip {
+        padding: 65px 0;
+      }
+
+      .quote-inner h2 {
+        font-size: 40px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-step {
+        padding-right: 0;
+      }
+
+      .process-step p {
+        max-width: 100%;
+      }
+
+      .contact h2 {
+        font-size: 45px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+    }
+
+
+    /* =========================================================
+       ACCESSIBILITY
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =======================================================
+       DEMO NOTICE
+  ======================================================== -->
+
+  <div class="demo-bar">
+    Premium Website Concept — Demo Preview for Outback Property Care NT
+  </div>
+
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header>
+
+    <div class="container">
+
+      <nav class="nav">
+
+        <a href="#" class="brand">
+
+          <div class="brand-mark">
+            ✦
+          </div>
+
+          <div class="brand-text">
+
+            <div class="brand-name">
+              OUTBACK PROPERTY CARE
+            </div>
+
+            <div class="brand-sub">
+              NORTHERN TERRITORY
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#process">
+            How It Works
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+
+        <a href="#contact" class="nav-cta">
+          Get A Quote
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-grid"></div>
+
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <div class="eyebrow">
+            <span></span>
+            Property Care · Northern Territory
+          </div>
+
+
+          <h1>
+            Property care
+            <br>
+            built for the
+            <span class="highlight">
+              Outback.
+            </span>
+          </h1>
+
+
+          <p class="hero-copy">
+            Professional property maintenance and care for homes,
+            businesses and properties across the Northern Territory.
+            Reliable service. Quality workmanship. No shortcuts.
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-primary">
+              Request A Quote
+              <span>→</span>
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+              Explore Services
+            </a>
+
+          </div>
+
+
+          <div class="hero-stats">
+
+            <div class="stat">
+
+              <span class="stat-number">
+                01
+              </span>
+
+              <span class="stat-text">
+                Reliable Service
+              </span>
+
+            </div>
+
+
+            <div class="stat">
+
+              <span class="stat-number">
+                02
+              </span>
+
+              <span class="stat-text">
+                Quality Focused
+              </span>
+
+            </div>
+
+
+            <div class="stat">
+
+              <span class="stat-number">
+                03
+              </span>
+
+              <span class="stat-text">
+                Northern Territory
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="landscape">
+
+        <div class="sun"></div>
+
+        <div class="hill hill-one"></div>
+
+        <div class="hill hill-two"></div>
+
+        <div class="hill hill-three"></div>
+
+        <div class="grass-line"></div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section class="section intro" id="about">
+
+      <div class="container">
+
+        <div class="intro-layout">
+
+          <div class="reveal">
+
+            <div class="section-label">
+              Property care, done properly
+            </div>
+
+
+            <h2>
+              Your property deserves
+              <span>more than the bare minimum.</span>
+            </h2>
+
+
+            <p class="intro-copy">
+              Outback Property Care NT is built around a simple idea:
+              property maintenance should be reliable, professional
+              and straightforward.
+            </p>
+
+
+            <p class="intro-copy">
+              Whether it's keeping a residential property looking its
+              best, maintaining an outdoor area, cleaning up after a
+              project or helping look after a commercial property,
+              the right approach makes all the difference.
+            </p>
+
+          </div>
+
+
+          <div class="visual-card reveal">
+
+            <div class="visual-orb"></div>
+
+            <div class="visual-lines"></div>
+
+
+            <div class="visual-bottom">
+
+              <small>
+                The Outback Standard
+              </small>
+
+              <h3>
+                Reliable.
+                Professional.
+                Straightforward.
+              </h3>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="section services" id="services">
+
+      <div class="container">
+
+        <div class="services-header reveal">
+
+          <div>
+
+            <div class="section-label">
+              What we do
+            </div>
+
+            <h2>
+              Practical property care.
+              <br>
+
+              <span style="color: var(--clay);">
+                Properly delivered.
+              </span>
+            </h2>
+
+          </div>
+
+
+          <p>
+            A flexible property-care approach designed around
+            the needs of homeowners, businesses and property owners.
+          </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              01 / MAINTENANCE
+            </div>
+
+            <div class="service-icon">
+              ✦
+            </div>
+
+            <h3>
+              General Property Maintenance
+            </h3>
+
+            <p>
+              Keeping properties presentable, functional and
+              looked after with practical maintenance solutions.
+            </p>
+
+            <div class="service-arrow">
+              →
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              02 / OUTDOORS
+            </div>
+
+            <div class="service-icon">
+              ◆
+            </div>
+
+            <h3>
+              Outdoor Property Care
+            </h3>
+
+            <p>
+              Helping keep outdoor areas clean, tidy and
+              maintained so your property stays looking its best.
+            </p>
+
+            <div class="service-arrow">
+              →
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              03 / CLEAN-UP
+            </div>
+
+            <div class="service-icon">
+              +
+            </div>
+
+            <h3>
+              Property Clean-Up
+            </h3>
+
+            <p>
+              Practical clean-up and property presentation
+              solutions for spaces that need some attention.
+            </p>
+
+            <div class="service-arrow">
+              →
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              04 / COMMERCIAL
+            </div>
+
+            <div class="service-icon">
+              □
+            </div>
+
+            <h3>
+              Commercial Property Care
+            </h3>
+
+            <p>
+              Flexible property-care support designed around
+              commercial spaces and ongoing maintenance needs.
+            </p>
+
+            <div class="service-arrow">
+              →
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              05 / RURAL
+            </div>
+
+            <div class="service-icon">
+              ◇
+            </div>
+
+            <h3>
+              Rural & Remote Properties
+            </h3>
+
+            <p>
+              Property support suited to the unique requirements
+              of rural, regional and remote locations.
+            </p>
+
+            <div class="service-arrow">
+              →
+            </div>
+
+          </article>
+
+
+          <article class="service-card reveal">
+
+            <div class="service-number">
+              06 / CUSTOM
+            </div>
+
+            <div class="service-icon">
+              ↗
+            </div>
+
+            <h3>
+              Custom Property Solutions
+            </h3>
+
+            <p>
+              Have something specific in mind? Talk through what
+              you need and find a practical solution for your property.
+            </p>
+
+            <div class="service-arrow">
+              →
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHY US
+    ====================================================== -->
+
+    <section class="section section-dark">
+
+      <div class="container">
+
+        <div class="why-layout">
+
+
+          <div class="why-visual reveal">
+
+            <div class="coordinate">
+              NORTHERN TERRITORY · AUSTRALIA
+            </div>
+
+          </div>
+
+
+          <div class="why-content reveal">
+
+            <div class="section-label">
+              Why Outback Property Care
+            </div>
+
+
+            <h2>
+              Built around the way
+              property owners
+              <span style="color: var(--sand);">
+                actually need help.
+              </span>
+            </h2>
+
+
+            <p>
+              Good property care isn't complicated. It's about
+              showing up, communicating clearly, doing the job
+              properly and leaving the property better than you
+              found it.
+            </p>
+
+
+            <div class="benefits">
+
+
+              <div class="benefit">
+
+                <div class="benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+                  <h4>
+                    Reliable Communication
+                  </h4>
+
+                  <p>
+                    Clear communication from the first enquiry
+                    through to completion.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="benefit">
+
+                <div class="benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+
+                  <h4>
+                    Professional Presentation
+                  </h4>
+
+                  <p>
+                    Your property deserves to look cared for
+                    before, during and after the job.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="benefit">
+
+                <div class="benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+
+                  <h4>
+                    Quality-Focused Work
+                  </h4>
+
+                  <p>
+                    A focus on getting the details right rather
+                    than simply getting the job finished.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="benefit">
+
+                <div class="benefit-icon">
+                  ✓
+                </div>
+
+                <div>
+
+                  <h4>
+                    Built For NT Conditions
+                  </h4>
+
+                  <p>
+                    A property-care concept designed with the
+                    Northern Territory environment in mind.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUOTE STRIP
+    ====================================================== -->
+
+    <section class="quote-strip">
+
+      <div class="container">
+
+        <div class="quote-inner reveal">
+
+          <h2>
+            Let's get your property
+            <span>looking its best.</span>
+          </h2>
+
+          <a href="#contact" class="btn btn-dark">
+            Get A Quote
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+
+    <section class="section process" id="process">
+
+      <div class="container">
+
+        <div class="process-header reveal">
+
+          <div class="section-label">
+            How it works
+          </div>
+
+          <h2>
+            Simple from start
+            to finish.
+          </h2>
+
+          <p>
+            No complicated process. Tell us what you need,
+            get a clear quote and let the work begin.
+          </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+          <div class="process-step reveal">
+
+            <div class="process-number">
+              01
+            </div>
+
+            <h3>
+              Tell Us What You Need
+            </h3>
+
+            <p>
+              Get in touch and explain what needs doing at
+              your property.
+            </p>
+
+          </div>
+
+
+          <div class="process-step reveal">
+
+            <div class="process-number">
+              02
+            </div>
+
+            <h3>
+              Get Your Quote
+            </h3>
+
+            <p>
+              We'll discuss the job and provide the appropriate
+              quote for your requirements.
+            </p>
+
+          </div>
+
+
+          <div class="process-step reveal">
+
+            <div class="process-number">
+              03
+            </div>
+
+            <h3
+>
+              We Get To Work
+            </h3>
+
+            <p>
+              Once everything is confirmed, the work can be
+              scheduled and carried out.
+            </p>
+
+          </div>
+
+
+          <div class="process-step reveal">
+
+            <div class="process-number">
+              04
+            </div>
+
+            <h3>
+              Enjoy The Result
+            </h3>
+
+            <p>
+              Your property gets the attention and care
+              it deserves.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section class="section contact" id="contact">
+
+      <div class="container">
+
+        <div class="contact-inner">
+
+
+          <div class="reveal">
+
+            <div class="section-label">
+              Get in touch
+            </div>
+
+
+            <h2>
+              Got a property
+              that needs some
+              <span>attention?</span>
+            </h2>
+
+
+            <p class="contact-copy">
+              Contact Outback Property Care NT to discuss what
+              you need done and find the right solution for your
+              property.
+            </p>
+
+
+            <a
+              href="tel:0400000000"
+              class="btn btn-primary"
+            >
+              Call For A Quote
+              <span>→</span>
+            </a>
+
+          </div>
+
+
+          <div class="contact-details reveal">
+
+
+            <a
+              href="tel:0400000000"
+              class="contact-item"
+            >
+
+              <div class="contact-item-icon">
+                ☎
+              </div>
+
+              <div>
+
+                <small>
+                  Phone
+                </small>
+
+                <strong>
+                  0400 000 000
+                </strong>
+
+              </div>
+
+            </a>
+
+
+            <a
+              href="mailto:hello@example.com"
+              class="contact-item"
+            >
+
+              <div class="contact-item-icon">
+                @
+              </div>
+
+              <div>
+
+                <small>
+                  Email
+                </small>
+
+                <strong>
+                  hello@example.com
+                </strong>
+
+              </div>
+
+            </a>
+
+
+            <div class="contact-item">
+
+              <div class="contact-item-icon">
+                ◉
+              </div>
+
+              <div>
+
+                <small>
+                  Service Area
+                </small>
+
+                <strong>
+                  Northern Territory
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <p class="contact-note">
+              DEMO NOTE: Phone number, email, service area and
+              business details will be replaced with the client's
+              confirmed information before launch.
+            </p>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+          <a href="#" class="brand">
+
+            <div class="brand-mark">
+              ✦
+            </div>
+
+            <div class="brand-text">
+
+              <div class="brand-name">
+                OUTBACK PROPERTY CARE
+              </div>
+
+              <div class="brand-sub">
+                NORTHERN TERRITORY
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <p>
+            Professional property care and maintenance,
+            designed for the Northern Territory.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Explore
+          </h4>
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#process">
+            How It Works
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Services
+          </h4>
+
+          <a href="#services">
+            Property Maintenance
+          </a>
+
+          <a href="#services">
+            Outdoor Care
+          </a>
+
+          <a href="#services">
+            Property Clean-Up
+          </a>
+
+          <a href="#services">
+            Commercial Care
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Contact
+          </h4>
+
+          <a href="tel:0400000000">
+            0400 000 000
+          </a>
+
+          <a href="mailto:hello@example.com">
+            hello@example.com
+          </a>
+
+          <a href="#contact">
+            Request A Quote
+          </a>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          © 2026 Outback Property Care NT.
+          All rights reserved.
+        </span>
+
+        <span>
+          Premium Website Demo
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+    document.querySelectorAll(
+      'a[href^="#"]'
+    ).forEach((link) => {
+
+      link.addEventListener("click", (event) => {
+
+        const targetId =
+          link.getAttribute("href");
+
+        if (
+          targetId &&
+          targetId !== "#"
+        ) {
+
+          const target =
+            document.querySelector(targetId);
+
+          if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          }
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
+        
